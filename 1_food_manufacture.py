@@ -356,7 +356,9 @@ for oid in oils:
 # s5d + b5e − u5e − s5e = 0
 # s5e + b5f − u5f = 500
 
-solver = pe.SolverFactory('scip6', executable=exepath, solver_io='nl')
+# solver = pe.SolverFactory('scip6', executable=exepath, solver_io='nl')
+solver = pe.SolverFactory('glpk')
+
 if not path.isfile(exepath):
     logging.error('Error in path to solver file.')
 if osname == 'nt':
